@@ -1,0 +1,22 @@
+{
+    "name": "enhance-prompt",
+    "displayName": "Enhance Prompt",
+    "description": "Transform raw prompts into professional-grade, codebase-aware instructions",
+    "version": "1.0.0",
+    "author": {
+        "name": "VoDaiLocz",
+        "url": "https://github.com/VoDaiLocz"
+    },
+    "homepage": "https://github.com/VoDaiLocz/Enhance-Prompt",
+    "repository": "https://github.com/VoDaiLocz/Enhance-Prompt",
+    "license": "MIT",
+    "keywords": [
+        "prompt-engineering",
+        "enhance-prompt",
+        "codebase-aware",
+        "skills",
+        "agentic"
+    ],
+    "skills": "./skills/",
+    "commands": "./commands/"
+}

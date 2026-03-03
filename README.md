@@ -2,125 +2,202 @@
 
 > An agentic AI skill that transforms raw, vague prompts into professional-grade, context-rich instructions — like having a prompt engineer on your team.
 
-## What It Does
+## How It Works
 
-Takes any prompt (even a single word like "optimize") and enhances it through:
+The moment you invoke `/enhance-prompt`, it doesn't just rewrite your words. It steps back and scans your codebase to understand what you're actually building.
 
-1. **7-Layer Enhancement Framework** — Clarity → Specificity → Context → Structure → Constraints → Output Format → Verification
-2. **Codebase Analysis** — Auto-scans your project (tech stack, patterns, files) to inject real context
-3. **Structured Output** — Every enhanced prompt follows the 4-section format: Context, Task, Constraints, Output
-4. **Quality Scoring** — Before/after comparison with 7-dimension scorecard (score out of 35)
-5. **Prompt Library** — 11 ready-to-use professional templates for common scenarios
+It pulls your tech stack, dependencies, file structure, patterns, and constraints — then injects that real context into a structured, professional prompt.
 
-## Quick Start
-
-### Usage
-
-Type `/enhance-prompt` followed by your raw prompt:
-
-```
-/enhance-prompt Fix the login page
-/enhance-prompt Add caching to the API
-/enhance-prompt Refactor the user service
-```
-
-### Example
-
-**Before:**
-> Fix the bug in auth
-
-**After:**
-> **Context:** Next.js 14 App Router + TypeScript. Auth via `next-auth` v5 in `src/lib/auth.ts`.
->
-> **Task:**
-> 1. Debug `signIn()` callback in `auth.config.ts:25`
-> 2. Fix session persistence in `SessionProvider` wrapper
-> 3. Verify redirect logic after login
->
-> **Constraints:**
-> - ✅ Follow existing patterns in `src/middleware.ts`
-> - ❌ Don't modify Prisma schema
->
-> **Verification:**
-> - [ ] Valid login → redirects to `/dashboard`
-> - [ ] Invalid login → shows error message
-> - [ ] Session persists after refresh
+Every enhanced prompt includes a before/after quality score (out of 35), risk assessment, difficulty estimate, and a clean copy-ready version.
 
 ## Installation
 
-### For Antigravity / Gemini
+> Install once. Works across Claude Code, Cursor, Codex, and OpenCode.
 
-Copy the `enhance-prompt/` folder to your skills directory:
+### Claude Code (via Plugin Marketplace)
 
-```bash
-cp -r enhance-prompt/ ~/.gemini/antigravity/skills/enhance-prompt/
+```
+/plugin marketplace add VoDaiLocz/enhance-prompt
+/plugin install enhance-prompt@enhance-prompt
 ```
 
-### For Claude Code
+### Cursor (via Plugin Marketplace)
 
-Copy the `enhance-prompt/` folder to your project's `.claude/skills/`:
+In a Cursor Agent conversation:
 
-```bash
-cp -r enhance-prompt/ .claude/skills/enhance-prompt/
+```
+/plugin-add enhance-prompt
 ```
 
-### Slash Command (Optional)
+### Codex
 
-Copy the workflow file so `/enhance-prompt` works as a slash command:
+Tell Codex:
+
+```
+Fetch and follow instructions from https://raw.githubusercontent.com/VoDaiLocz/Enhance-Prompt/main/.codex/INSTALL.md
+```
+
+### OpenCode
+
+Tell OpenCode:
+
+```
+Fetch and follow instructions from https://raw.githubusercontent.com/VoDaiLocz/Enhance-Prompt/main/.opencode/INSTALL.md
+```
+
+### Manual (Antigravity / Gemini)
 
 ```bash
-cp -r .agents/workflows/ your-project/.agents/workflows/
+cp -r skills/enhance-prompt/ ~/.gemini/antigravity/skills/enhance-prompt/
 ```
+
+## Verify Installation
+
+Start a new session and type:
+
+```
+/enhance-prompt Fix the login page
+```
+
+The agent will automatically invoke the skill, scan your codebase, and produce a professional enhanced prompt.
+
+## Usage
+
+```
+/enhance-prompt <your raw prompt>
+```
+
+**Examples:**
+```
+/enhance-prompt Fix the bug in auth
+/enhance-prompt Add caching to the API
+/enhance-prompt Refactor the user service
+/enhance-prompt optimize the database
+```
+
+## Example Output
+
+**Raw prompt:** `Fix the bug in auth`
+
+**Enhanced:**
+
+```markdown
+## Context
+Next.js 14 App Router + TypeScript. Auth via `next-auth` v5 in `src/lib/auth.ts`.
+Prisma adapter. Session breaks after form submit in `src/app/(auth)/login/page.tsx`.
+
+## Task
+1. Debug `signIn()` callback at `auth.config.ts:25`
+2. Fix session persistence in `SessionProvider` wrapper
+3. Verify redirect logic in `middleware.ts` callbacks
+
+## Constraints
+- ✅ Follow existing patterns in `src/middleware.ts`
+- ✅ TDD: write failing test first
+- ❌ Don't modify Prisma schema
+
+## Verification
+- [ ] Valid login → redirects to `/dashboard`
+- [ ] Invalid login → shows error toast
+- [ ] Session persists after page refresh
+```
+
+**Score: 6/35 → 34/35**
+
+## What's Inside
+
+### Enhancement Framework
+
+- **7-Layer Enhancement** — Clarity → Specificity → Context → Structure → Constraints → Output Format → Verification
+- **HARD-GATE** — codebase scan is mandatory, no exceptions
+- **Iron Law** — No enhanced prompt without codebase context
+- **RED FLAG guards** — per-layer checklist to catch incomplete enhancements
+
+### Codebase Analysis
+
+- **L1** — Project overview (package.json, tsconfig, .env.example)
+- **L2** — Architecture scan (imports, naming, routing patterns)
+- **L2.5** — Monorepo detection (Turborepo, Nx, Lerna, PNPM workspaces)
+- **L2.5** — Framework detection (Next.js App/Pages Router, FastAPI, Django, Express, NestJS)
+- **L3** — Deep scan (function signatures, types, test patterns)
+
+### Output Format
+
+Every enhanced prompt includes:
+
+| Section | Description |
+|---------|-------------|
+| 📊 Enhancement Summary | Before/After score table (7 dimensions, /35) |
+| 🔴 Original Prompt | The raw input |
+| 🟢 Enhanced Prompt | Context + Task + Constraints + Output + Verification |
+| ⏱️ Difficulty Estimate | Complexity, time, risk, files affected |
+| ⚠️ Risk Assessment | High/Medium/Low risks with mitigation |
+| 🔀 Alternative Approaches | Options with pros/cons |
+| 📋 Copy-Ready Prompt | Clean version, paste anywhere |
+
+### Prompt Library — 11 Templates
+
+| # | Template | Use Case |
+|---|----------|----------|
+| 1 | 🐛 Bug Fix | Debugging with root cause investigation |
+| 2 | ✨ New Feature | Adding functionality with TDD |
+| 3 | ⚡ Performance | Optimization with measurable targets |
+| 4 | 🔄 Refactor | Structural improvements, zero behavior change |
+| 5 | 🔒 Security Audit | OWASP Top 10 scanning |
+| 6 | 📝 Documentation | JSDoc, README, inline comments |
+| 7 | 🧪 Testing | Unit, integration, coverage targets |
+| 8 | 🎨 UI/Styling | Components, responsive, WCAG accessible |
+| 9 | 🔌 API Integration | External services with retry/backoff |
+| 10 | 🚀 DevOps | CI/CD, deployment, health checks |
+| 11 | 🗃️ Database | Migrations, reversible, indexed |
+
+## Philosophy
+
+- **Evidence over guessing** — scan the codebase, don't assume the tech stack
+- **Specificity beats length** — `src/auth/login.ts:42` > paragraph of description
+- **Systematic over ad-hoc** — 7-layer framework, not feel-good rewrites
+- **Prove improvement** — scoring table shows the enhancement worked
 
 ## File Structure
 
 ```
-enhance-prompt/
-├── SKILL.md                                    # Main skill (orchestrator)
-└── references/
-    ├── prompt-patterns.md                      # 7-Layer Enhancement Framework
-    ├── codebase-analysis.md                    # Multi-level codebase scanning guide
-    ├── output-format.md                        # Structured output template
-    ├── prompt-library.md                       # 6 core prompt templates
-    └── prompt-library-extended.md              # 5 extended prompt templates
+.claude-plugin/
+├── plugin.json              # Claude Code plugin manifest
+└── marketplace.json         # Claude Code marketplace config
 
-.agents/workflows/
-└── enhance-prompt.md                           # Slash command workflow
+.cursor-plugin/
+└── plugin.json              # Cursor plugin manifest
+
+.codex/
+└── INSTALL.md               # Codex installation guide
+
+.opencode/
+└── INSTALL.md               # OpenCode installation guide
+
+commands/
+└── enhance-prompt.md        # /enhance-prompt slash command
+
+skills/enhance-prompt/
+├── SKILL.md                 # Main skill orchestrator
+└── references/
+    ├── prompt-patterns.md   # 7-Layer Enhancement Framework
+    ├── codebase-analysis.md # Multi-level codebase scanning
+    ├── output-format.md     # Structured output template
+    ├── prompt-library.md    # 6 core prompt templates
+    └── prompt-library-extended.md  # 5 extended templates
+
+docs/
+└── INSTALL.md               # Platform-specific install guide
+
+RELEASE-NOTES.md
 ```
 
-## Features
+## Contributing
 
-| Feature | Description |
-|---------|-------------|
-| **7-Layer Enhancement** | Systematic framework ensuring every prompt dimension is covered |
-| **Codebase-Aware** | Auto-scans project structure, dependencies, and patterns |
-| **Interactive Mode** | Asks 1-2 targeted questions when prompt is critically ambiguous |
-| **Quality Scoring** | 7-dimension scorecard (Clarity, Specificity, Context, Structure, Constraints, Output, Verification) |
-| **Multilingual** | Detects non-English prompts and produces bilingual output with English technical terms |
-| **Monorepo Detection** | Recognizes Turborepo, Nx, Lerna, PNPM workspaces |
-| **Framework Detection** | Auto-identifies Next.js, FastAPI, Django, Express, NestJS, React |
-| **Difficulty Estimate** | Provides complexity, time, and risk estimates |
-| **Risk Assessment** | Highlights potential risks with mitigation strategies |
-| **Alternative Approaches** | Suggests multiple implementation paths with trade-offs |
-| **Prompt Library** | 11 professional templates for common scenarios |
-| **Copy-Ready Output** | Clean version ready to paste into any AI tool |
-
-## Prompt Library Templates
-
-| # | Template | Use Case |
-|---|----------|----------|
-| 1 | 🐛 Bug Fix | Debugging specific errors |
-| 2 | ✨ New Feature | Adding functionality |
-| 3 | ⚡ Performance | Optimization with metrics |
-| 4 | 🔄 Refactor | Structural improvements |
-| 5 | 🔒 Security Audit | OWASP vulnerability scanning |
-| 6 | 📝 Documentation | API docs, inline comments |
-| 7 | 🧪 Testing | Unit/integration tests |
-| 8 | 🎨 UI/Styling | Components, responsive design |
-| 9 | 🔌 API Integration | External service connections |
-| 10 | 🚀 DevOps | CI/CD, deployment configs |
-| 11 | 🗃️ Database | Migrations, schema changes |
-
+1. Fork this repository
+2. Create a branch for your improvement
+3. Follow the skill format in `skills/enhance-prompt/SKILL.md`
+4. Submit a PR
 
 ## License
 

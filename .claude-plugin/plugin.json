@@ -1,0 +1,13 @@
+{
+  "name": "enhance-prompt",
+  "description": "Transform raw prompts into professional-grade, codebase-aware instructions. Features: 7-Layer Enhancement Framework, multi-level codebase scanning, monorepo detection, multilingual support, risk assessment, and 11 professional prompt templates.",
+  "version": "1.0.0",
+  "author": {
+    "name": "VoDaiLocz",
+    "url": "https://github.com/VoDaiLocz"
+  },
+  "homepage": "https://github.com/VoDaiLocz/Enhance-Prompt",
+  "repository": "https://github.com/VoDaiLocz/Enhance-Prompt",
+  "license": "MIT",
+  "keywords": ["prompt-engineering", "enhance-prompt", "codebase-aware", "skills", "agentic"]
+}
