@@ -9,7 +9,7 @@
         {
             "name": "enhance-prompt",
             "description": "Transform raw prompts into professional-grade, codebase-aware instructions using 7-Layer Enhancement Framework.",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": "./",
             "author": {
                 "name": "VoDaiLocz",

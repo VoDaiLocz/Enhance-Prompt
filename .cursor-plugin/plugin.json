@@ -2,7 +2,7 @@
     "name": "enhance-prompt",
     "displayName": "Enhance Prompt",
     "description": "Transform raw prompts into professional-grade, codebase-aware instructions",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": {
         "name": "VoDaiLocz",
         "url": "https://github.com/VoDaiLocz"

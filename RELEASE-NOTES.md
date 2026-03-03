@@ -1,5 +1,27 @@
 # Enhance Prompt Release Notes
 
+## v1.0.1 (2026-03-03)
+
+### Fixed
+
+- **Symlink double-nesting** — Codex and OpenCode install guides now symlink to `skills/enhance-prompt/` instead of `skills/`, fixing unresolvable paths
+- **Windows junction path** — PowerShell junction in Codex install guide corrected to point to `skills\enhance-prompt`
+- **Claude plugin manifest** — Added missing `skills` and `commands` path references to `.claude-plugin/plugin.json`
+- **Phantom file structure** — Removed non-existent `docs/INSTALL.md` from README file tree
+- **Command file references** — `prompt-library.md` and `prompt-library-extended.md` now use full `enhance-prompt/references/` prefix in the workflow file
+- **Platform-specific tool names** — Replaced Cursor-specific tool names (`list_dir`, `view_file`, `grep_search`, `find_by_name`, `view_code_item`) with platform-agnostic descriptions in codebase analysis
+
+### Improved
+
+- **Output efficiency rules** — Added token budget guidelines (150-700 words based on complexity) and anti-redundancy rules
+- **Scoring accuracy gates** — Added gates to prevent inflated "After" scores (every 4-5 must be justified)
+- **Mid-range scoring guidance** — Scoring table now includes score 3 (Adequate) descriptions to prevent score inflation
+- **Conditional section rules** — Risk Assessment and Alternative Approaches are now skipped when not applicable
+- **Enhanced example** — Complete example in output format now includes Enhancement Notes and Copy-Ready Prompt sections
+- **Copy-Ready Prompt definition** — Clarified as clean extraction of Context/Task/Constraints/Output/Verification only
+- **New red flags** — Added checks for redundancy across sections, inflated scores, subjective verification, over-verbose output, non-actionable constraints
+- **Key principles** — Added "Score honestly" and "Output efficiency" to SKILL.md principles
+
 ## v1.0.0 (2026-03-03)
 
 ### Added
