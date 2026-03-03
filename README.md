@@ -121,9 +121,6 @@ enhance-prompt/
 | 10 | 🚀 DevOps | CI/CD, deployment configs |
 | 11 | 🗃️ Database | Migrations, schema changes |
 
-## Built With
-
-Inspired by [obra/superpowers](https://github.com/obra/superpowers) — an agentic skills framework & software development methodology.
 
 ## License
 
