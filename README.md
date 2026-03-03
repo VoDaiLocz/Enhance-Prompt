@@ -135,7 +135,7 @@ Every enhanced prompt includes:
 | 🔀 Alternative Approaches | Options with pros/cons |
 | 📋 Copy-Ready Prompt | Clean version, paste anywhere |
 
-### Prompt Library — 11 Templates
+### Prompt Library — 12 Templates
 
 | # | Template | Use Case |
 |---|----------|----------|
@@ -150,6 +150,7 @@ Every enhanced prompt includes:
 | 9 | 🔌 API Integration | External services with retry/backoff |
 | 10 | 🚀 DevOps | CI/CD, deployment, health checks |
 | 11 | 🗃️ Database | Migrations, reversible, indexed |
+| 12 | 🔍 Deep Scan | Root cause analysis, null/async/security bug hunting |
 
 ## Philosophy
 
