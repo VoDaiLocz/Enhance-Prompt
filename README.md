@@ -135,7 +135,7 @@ Every enhanced prompt includes:
 | 🔀 Alternative Approaches | Options with pros/cons |
 | 📋 Copy-Ready Prompt | Clean version, paste anywhere |
 
-### Prompt Library — 12 Templates
+### Prompt Library — 13 Templates
 
 | # | Template | Use Case |
 |---|----------|----------|
@@ -151,6 +151,7 @@ Every enhanced prompt includes:
 | 10 | 🚀 DevOps | CI/CD, deployment, health checks |
 | 11 | 🗃️ Database | Migrations, reversible, indexed |
 | 12 | 🔍 Deep Scan | Root cause analysis, null/async/security bug hunting |
+| 13 | 👀 Code Review | Security (OWASP), performance (O(n²), N+1), pattern compliance |
 
 ## Philosophy
 
@@ -185,7 +186,7 @@ skills/enhance-prompt/
     ├── codebase-analysis.md # Multi-level codebase scanning
     ├── output-format.md     # Structured output template
     ├── prompt-library.md    # 6 core prompt templates
-    └── prompt-library-extended.md  # 5 extended templates
+    └── prompt-library-extended.md  # 7 extended templates
 
 docs/
 └── INSTALL.md               # Platform-specific install guide

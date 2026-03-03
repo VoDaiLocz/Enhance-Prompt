@@ -13,7 +13,7 @@
 - **Difficulty Estimate** — complexity, time, risk, and files-affected per enhancement
 - **Risk Assessment** — High/Medium/Low risks with mitigation strategies
 - **Alternative Approaches** — comparison table with pros/cons and recommended scenarios
-- **12 Professional Templates** — Bug Fix, New Feature, Performance, Refactor, Security, Documentation, Testing, UI/Styling, API Integration, DevOps, Database, Deep Scan / Root Cause Analysis
+- **13 Professional Templates** — Bug Fix, New Feature, Performance, Refactor, Security, Documentation, Testing, UI/Styling, API Integration, DevOps, Database, Deep Scan / Root Cause Analysis, Code Review
 - **Multilingual Support** — detects non-English prompts, outputs bilingual enhanced prompt
 - **Monorepo Detection** — Turborepo, Nx, Lerna, PNPM Workspaces
 - **Framework Detection** — Next.js App Router/Pages, FastAPI, Django, Express, NestJS, React

@@ -1,6 +1,6 @@
 # Prompt Library — Extended Templates
 
-> Templates 7-12. Core templates (1-6): see `prompt-library.md`
+> Templates 7-13. Core templates (1-6): see `prompt-library.md`
 
 ---
 
@@ -217,4 +217,63 @@ Findings as a structured list:
 - [ ] Async race conditions checked
 - [ ] Security issues (injection, XSS) checked
 - [ ] Proposed fix addresses root cause without side effects
+```
+
+---
+
+## 13. 👀 Code Review
+
+```markdown
+## Context
+[Framework] project. Module: [module/feature, e.g., Payment / Image Processing].
+Tech stack: [e.g., Golang + Redis / Node.js + PostgreSQL].
+Files to review: `[list files or directory]`.
+Architecture: [e.g., Clean Architecture / Hexagonal / MVC].
+Recent changes: `[git log --oneline -5 -- <scope>]`.
+
+## Task
+Review this code against the following criteria:
+
+1. **Security** — Check OWASP Top 10 vulnerabilities in `[scope/files]`:
+   - A01: Broken Access Control → check `[auth/permission files]`
+   - A03: Injection (SQL/NoSQL/Command) → check `[query/exec files]`
+   - A07: XSS → check `[template/render files]`
+   - Special focus: [e.g., leaked secret keys / hardcoded credentials / missing input validation]
+2. **Performance** — Find code with:
+   - O(n²) or worse complexity (nested loops over collections)
+   - N+1 database query problems (queries inside loops)
+   - Missing indexes, unnecessary data fetching, unoptimized joins
+   - Missing caching opportunities for repeated expensive operations
+3. **Pattern Compliance** — Verify adherence to [e.g., Clean Architecture / SOLID]:
+   - Single Responsibility: each file/class has one reason to change
+   - Dependency Inversion: business logic depends on abstractions, not implementations
+   - Layer violations: no direct DB calls from handlers/controllers
+   - Naming conventions and project structure consistency
+
+## Constraints
+- ✅ Report only **High** and **Medium** severity issues
+- ✅ Always explain **WHY** the current code is a problem — not just what's wrong
+- ✅ Provide a concrete fix for each finding
+- ✅ Include file:line references for every issue
+- ❌ Don't report Low severity or style-only nitpicks
+- ❌ Don't rewrite code — suggest targeted fixes
+
+## Output Format
+Comparison table for each finding:
+
+| # | Severity | Category | File:Line | Current Code | Problem (WHY) | Recommended Fix |
+|---|----------|----------|-----------|--------------|---------------|-----------------|
+| 1 | [High/Medium] | [Security/Performance/Pattern] | `[file:line]` | [Current implementation] | [Why this is a problem] | [Optimized recommendation] |
+
+**Summary:**
+- Total issues: [N] (High: [N], Medium: [N])
+- Categories: Security [N], Performance [N], Pattern [N]
+
+## Verification
+- [ ] All High severity issues have concrete fixes
+- [ ] Each finding includes WHY explanation
+- [ ] No false positives — each issue is reproducible
+- [ ] Security findings reference specific OWASP categories
+- [ ] Performance findings include complexity analysis
+- [ ] Pattern findings reference specific principles violated
 ```

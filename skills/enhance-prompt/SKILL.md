@@ -1,6 +1,6 @@
 ---
 name: enhance-prompt
-description: Transform raw prompts into professional-grade, codebase-aware instructions. Use when improving vague/incomplete prompts, adding codebase context to requests, rewriting instructions with structured sections, or crafting detailed prompts like a professional prompt engineer. Supports interactive refinement, multilingual handling, monorepo detection, and includes 12 professional templates.
+description: Transform raw prompts into professional-grade, codebase-aware instructions. Use when improving vague/incomplete prompts, adding codebase context to requests, rewriting instructions with structured sections, or crafting detailed prompts like a professional prompt engineer. Supports interactive refinement, multilingual handling, monorepo detection, and includes 13 professional templates.
 ---
 
 # Enhance Prompt
@@ -125,7 +125,7 @@ When prompt is not in English:
 - `references/codebase-analysis.md` — Multi-level scanning with monorepo and framework detection
 - `references/output-format.md` — Structured output template with risk assessment
 - `references/prompt-library.md` — 6 core prompt templates
-- `references/prompt-library-extended.md` — 6 extended prompt templates
+- `references/prompt-library-extended.md` — 7 extended prompt templates
 
 ## Key Principles
 
