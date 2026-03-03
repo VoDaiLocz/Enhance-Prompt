@@ -1,6 +1,6 @@
 {
   "name": "enhance-prompt",
-  "description": "Transform raw prompts into professional-grade, codebase-aware instructions. Features: 7-Layer Enhancement Framework, multi-level codebase scanning, monorepo detection, multilingual support, risk assessment, and 11 professional prompt templates.",
+  "description": "Transform raw prompts into professional-grade, codebase-aware instructions. Features: 7-Layer Enhancement Framework, multi-level codebase scanning, monorepo detection, multilingual support, risk assessment, and 13 professional prompt templates.",
   "version": "1.0.0",
   "author": {
     "name": "VoDaiLocz",
