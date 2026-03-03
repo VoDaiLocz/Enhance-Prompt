@@ -1,7 +1,7 @@
 # Prompt Library — Core Templates
 
 > 6 battle-tested templates. Copy → fill `[brackets]` → use.
-> Extended templates (Testing, UI, API, DevOps, Database): see `prompt-library-extended.md`
+> Extended templates (Testing, UI, API, DevOps, Database, Deep Scan): see `prompt-library-extended.md`
 
 ---
 

@@ -1,6 +1,6 @@
 # Prompt Library — Extended Templates
 
-> Templates 7-11. Core templates (1-6): see `prompt-library.md`
+> Templates 7-12. Core templates (1-6): see `prompt-library.md`
 
 ---
 
@@ -159,4 +159,62 @@ Last migration: [date]. Production database: [yes/no].
 - [ ] Application code works with new schema
 - [ ] Existing queries return same results
 - [ ] `[ORM command]` shows no pending migrations
+```
+
+---
+
+## 12. 🔍 Deep Scan / Root Cause Analysis
+
+```markdown
+## Context
+[Framework + Stack, e.g., Next.js + Prisma] project.
+Symptom: [Describe observed behavior, e.g., User cannot login after password reset].
+Affected area: `[directory or module, e.g., src/auth/]`.
+Recent changes: `[git log --oneline -5 -- src/auth/]`.
+Related files: `[list key files]`.
+
+## Task
+1. Deep scan all files related to [feature, e.g., auth flow]:
+   - Trace the flow: `[entry point]` → `[middleware]` → `[handler]` → `[database call]`
+   - Map function call chain with file:line references
+2. Check for potential bugs:
+   - **Null/Undefined handling:** find unguarded `.property` access, missing `?? default` or `?.` chains
+   - **Async race conditions:** find missing `await`, unhandled Promise rejections, concurrent state mutations
+   - **Security issues:** find unsanitized user input in SQL queries (injection), unescaped output (XSS), missing CSRF tokens
+3. Review recent commits for regressions:
+   - `git log --oneline -10 -- [affected files]`
+   - Diff each commit against the symptom — identify which change introduced the bug
+4. Identify the root cause with evidence (file:line + code snippet)
+
+## Constraints
+- ✅ Trace the FULL flow — don't stop at the first suspicious line
+- ✅ Provide file:line references for every finding
+- ✅ Check BOTH happy path and error path
+- ✅ Verify recent commits against the symptom timeline
+- ❌ Don't fix issues while scanning — diagnose first, fix separately
+- ❌ Don't assume the root cause — prove it with evidence
+
+## Output Format
+Findings as a structured list:
+
+| # | Issue | File:Line | Severity | Description |
+|---|-------|-----------|----------|-------------|
+| 1 | [Issue type] | `[file:line]` | [Critical/High/Medium/Low] | [What's wrong] |
+
+**Root Cause Analysis:**
+- [Root cause]: [Evidence-based explanation with file:line references]
+- [Contributing factors]: [Other issues that made the bug possible]
+
+**Proposed Fix:**
+- [Fix description] at `[file:line]`
+- [Code snippet showing the fix]
+
+## Verification
+- [ ] Root cause identified with file:line evidence
+- [ ] All related files in the flow scanned
+- [ ] Recent commits checked for regressions
+- [ ] Null/undefined edge cases documented
+- [ ] Async race conditions checked
+- [ ] Security issues (injection, XSS) checked
+- [ ] Proposed fix addresses root cause without side effects
 ```
