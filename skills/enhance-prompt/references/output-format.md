@@ -12,6 +12,10 @@ The user must SEE the improvement quantified. "Better" is not a metric.
 ## The Complete Output Structure
 
 ```markdown
+## 🏷️ Detected Category
+**[emoji] [Category Name]** — Confidence: [High/Medium/Low]
+[If chain: "Multi-intent detected → See Prompt Chain below"]
+
 ## 📊 Enhancement Summary
 
 | Metric | Before | After |
@@ -95,10 +99,13 @@ Not every prompt needs every section. Apply these rules:
 
 | Section | Include When | Skip When |
 |---------|-------------|-----------|
+| 🏷️ Detected Category | Always | Never — always show detected category and confidence |
 | ⏱️ Difficulty Estimate | Always | Never — always include |
 | ⚠️ Risk Assessment | Task touches production, data, security, or infrastructure | Pure UI, documentation, or low-risk refactors |
 | 🔀 Alternative Approaches | Multiple valid strategies exist AND choice impacts architecture | Single obvious solution OR user specified the approach |
 | 💡 Enhancement Notes | Always | Never — user must understand what changed |
+| 🔗 Prompt Chain | Multi-intent detected (2+ categories) | Single-intent prompt |
+| 🔄 Iteration Delta | User requested refinement (v2+) | First enhancement (v1) |
 
 **Rule:** When skipping a section, do NOT include the header. A missing section is cleaner than an empty one.
 
@@ -251,3 +258,6 @@ Verify: `GET /api/orders` < 500ms, `GET /api/users/:id/activity` < 300ms, `npx p
 - Enhanced prompt is longer than 700 words for a simple task → Over-verbose, trim redundancy
 - Same information appears in multiple sections → Consolidate to single location
 - Constraints contain non-actionable statements ("write clean code") → Replace with specific rules
+- Multi-intent prompt forced into single template → Use Prompt Chain Decomposition
+- Auto-detected category doesn't match actual intent → Re-check signals, ask user
+- Iteration makes scores worse (delta ≤ -2) → Revert iteration, try different approach

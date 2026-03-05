@@ -1,5 +1,28 @@
 # Enhance Prompt Release Notes
 
+## v1.1.0 (2026-03-05)
+
+### Added
+
+- **Auto-Category Detection** (`references/auto-detection.md`) — Automatically analyzes raw prompt keywords and intent signals to select the best matching template (Bug Fix, Feature, Performance, etc.) with High/Medium/Low confidence scoring
+- **Prompt Chain Decomposition** (`references/prompt-chain.md`) — Detects multi-intent prompts (e.g., "fix the bug, add caching, and write tests") and decomposes them into focused sequential sub-prompts with dependency ordering and context linking
+- **Enhancement Iteration Mode** (`references/iteration-mode.md`) — Supports iterative refinement of enhanced prompts with tracked scoring deltas (v1 → v2 → v3), targeted change application, and max 3 iterations before re-analysis
+- **Detected Category section** in output format — Shows auto-detected category with confidence level at the top of every enhancement
+- **Multi-intent signal table** — 13-category signal matching system with primary and secondary signals for accurate intent detection
+- **Chain Summary table** — Aggregated complexity, time, and risk estimates across all sub-prompts in a chain
+- **Iteration delta tracking** — Before/After scoring comparison across enhancement versions with per-dimension delta
+
+### Improved
+
+- **Workflow expanded** from 6 to 9 steps — added auto-detection, chain check, and iteration support
+- **Process flow diagram** updated with auto-detection, multi-intent branching, chain decomposition, and iteration feedback loop
+- **Red flags** — added 3 new checks: multi-intent forced into single template, mismatched auto-detection, iteration score regression
+- **Conditional sections** — added Prompt Chain and Iteration Delta to conditional section rules
+- **Key principles** — added "Auto-detect, don't assume", "One concern per prompt", and "Iterate with precision"
+- **Command workflow** expanded from 5 to 8 steps with auto-detection, chain decomposition, and iteration phases
+- **File structure** updated with 3 new reference files
+- **Skill description** updated to include auto-category detection, prompt chain decomposition, and iterative refinement
+
 ## v1.0.1 (2026-03-03)
 
 ### Fixed

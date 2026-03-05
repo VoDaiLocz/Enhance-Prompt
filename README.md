@@ -109,6 +109,9 @@ Prisma adapter. Session breaks after form submit in `src/app/(auth)/login/page.t
 ### Enhancement Framework
 
 - **7-Layer Enhancement** — Clarity → Specificity → Context → Structure → Constraints → Output Format → Verification
+- **Auto-Category Detection** — automatically identifies prompt intent (Bug Fix, Feature, Performance, etc.) and selects the best template
+- **Prompt Chain Decomposition** — breaks complex multi-concern prompts into focused sequential sub-prompts
+- **Enhancement Iteration Mode** — targeted refinement with tracked scoring deltas across up to 3 iterations
 - **HARD-GATE** — codebase scan is mandatory, no exceptions
 - **Iron Law** — No enhanced prompt without codebase context
 - **RED FLAG guards** — per-layer checklist to catch incomplete enhancements
@@ -127,12 +130,14 @@ Every enhanced prompt includes:
 
 | Section | Description |
 |---------|-------------|
+| 🏷️ Detected Category | Auto-detected intent with confidence level |
 | 📊 Enhancement Summary | Before/After score table (7 dimensions, /35) |
 | 🔴 Original Prompt | The raw input |
 | 🟢 Enhanced Prompt | Context + Task + Constraints + Output + Verification |
 | ⏱️ Difficulty Estimate | Complexity, time, risk, files affected |
 | ⚠️ Risk Assessment | High/Medium/Low risks with mitigation |
 | 🔀 Alternative Approaches | Options with pros/cons |
+| 🔗 Prompt Chain | Decomposed sub-prompts for multi-intent inputs |
 | 📋 Copy-Ready Prompt | Clean version, paste anywhere |
 
 ### Prompt Library — 13 Templates
@@ -156,9 +161,12 @@ Every enhanced prompt includes:
 ## Philosophy
 
 - **Evidence over guessing** — scan the codebase, don't assume the tech stack
+- **Auto-detect over manual selection** — signal matching picks the right template
+- **One concern per prompt** — multi-intent prompts get decomposed into focused chains
 - **Specificity beats length** — `src/auth/login.ts:42` > paragraph of description
 - **Systematic over ad-hoc** — 7-layer framework, not feel-good rewrites
 - **Prove improvement** — scoring table shows the enhancement worked
+- **Iterate with precision** — targeted refinement, not full rewrites
 
 ## File Structure
 
@@ -186,7 +194,10 @@ skills/enhance-prompt/
     ├── codebase-analysis.md # Multi-level codebase scanning
     ├── output-format.md     # Structured output template
     ├── prompt-library.md    # 6 core prompt templates
-    └── prompt-library-extended.md  # 7 extended templates
+    ├── prompt-library-extended.md  # 7 extended templates
+    ├── auto-detection.md    # Auto-category detection & template selection
+    ├── prompt-chain.md      # Prompt chain decomposition
+    └── iteration-mode.md    # Enhancement iteration & refinement
 
 RELEASE-NOTES.md
 ```
